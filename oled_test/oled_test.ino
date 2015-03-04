@@ -86,17 +86,19 @@ void loop() {
 	Wire.write(0x07);
 	Wire.endTransmission();
 
-	for(int x=0;x<1024;x++){
+	for(uint16_t i=0;i<1024;i++){
 		Wire.beginTransmission(OLED_I2C_ADDRESS);
 		Wire.write(OLED_CONTROL_BYTE_DATA_STREAM);
-	    for (uint8_t i=0; i<16; i++) {
+	    for (uint8_t x=0; x<16; x++) {	
 			// Wire.write(0b11000001);	
 			// Wire.write(0x81);	
 			// Wire.write(0x02);
-			Wire.write(pattern1[i]);
-			// Wire.write(pattern2[i]);
+			Wire.write(pattern1[x]);
+			// Wire.write(pattern2[x]);	
+			i++;
 	    }
-	    Wire.endTransmission();
+	    i--;
+	    Wire.endTransmission();   
 	}
 
     delay(5000);

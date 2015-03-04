@@ -1,0 +1,42 @@
+	// // Now, do almost the same things that a "Reset" does - pg.23 of the datasheet
+	// // Set the Display OFF
+	// OLED_write_command(OLED_CMD_DISPLAY_OFF);
+	// // Set oscillator to default
+	// OLED_write_command(OLED_CMD_SET_DISPLAY_CLK_DIV);
+	// OLED_write_command(0x80);
+	// // Set COM Mux ratio
+	// OLED_write_command(OLED_CMD_SET_MUX_RATIO);
+	// OLED_write_command(0x3F);
+	// // Display offest = 0
+	// OLED_write_command(OLED_CMD_SET_DISPLAY_OFFSET);
+	// OLED_write_command(0x00);
+	// // Set start line to 0
+	// OLED_write_command(OLED_CMD_SET_DISPLAY_START_LINE);
+	// // Enable the charge pump
+	// OLED_write_command(OLED_CMD_SET_CHARGE_PUMP);
+	// OLED_write_command(0x14);
+	// // Set Memory Address mode to Horizontal (eg: KS108 graphic LCD)
+	// OLED_write_command(OLED_CMD_SET_MEMORY_ADDR_MODE);
+	// OLED_write_command(0x00);
+	// // Segment remap - ??? FIXME
+	// OLED_write_command(OLED_CMD_SET_SEGMENT_REMAP);
+	// // put first row at top - so that x,y = (0,0) is at top left
+	// OLED_write_command(OLED_CMD_SET_COM_SCAN_MODE);
+	// // reset COM pin map to sequential
+	// OLED_write_command(OLED_CMD_SET_COM_PIN_MAP);
+	// OLED_write_command(0x12);
+	// // set display contrast
+	// OLED_write_command(OLED_CMD_SET_CONTRAST);
+	// OLED_write_command(0xCF);	
+	// // set precharge period
+	// OLED_write_command(OLED_CMD_SET_PRECHARGE);
+	// OLED_write_command(0xF1);
+	// // set V_COMH deselect
+	// OLED_write_command(OLED_CMD_SET_VCOMH_DESELCT);
+	// OLED_write_command(0x30);
+	// // enable display of GRAM
+	// OLED_write_command(OLED_CMD_DISPLAY_RAM);
+	// // Normal display mode
+	// OLED_write_command(OLED_CMD_DISPLAY_NORMAL);
+	// // Turn ON display
+	// OLED_write_command(OLED_CMD_DISPLAY_ON);

@@ -57,33 +57,21 @@
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// Box pattern
+uint8_t pattern1[] = {
+	0x00,0x7E,0x42,0x42,0x42,0x42,0x7E,0x00,
+	0x00,0x7E,0x42,0x42,0x42,0x42,0x7E,0x00
+	};
+
+// Cross weave pattern
+uint8_t pattern2[] = {
+	0x81,0x42,0x24,0x18,0x18,0x24,0x42,0x81,
+	0x81,0x42,0x24,0x18,0x18,0x24,0x42,0x81
+	};
 
 void setup()   {                
-	// Serial.begin(19200);
-	// Serial.println("RDY");
-
 	// Init the OLED controller
 	OLED_init();
-
-	// Clear the OLED
-	Wire.beginTransmission(OLED_I2C_ADDRESS);
-	Wire.write(OLED_CONTROL_BYTE_CMD_STREAM);
-	Wire.write(OLED_CMD_SET_COLUMN_RANGE);
-	Wire.write(0x00);
-	Wire.write(0x7F);
-	Wire.write(OLED_CMD_SET_PAGE_RANGE);
-	Wire.write(0);
-	Wire.write(0x07);
-	Wire.endTransmission();
-
-	for(int x=0;x<64;x++){
-		Wire.beginTransmission(OLED_I2C_ADDRESS);
-		Wire.write(OLED_CONTROL_BYTE_DATA_STREAM);
-	    for (uint8_t i=0; i<16; i++) {
-			Wire.write(0x00);	
-	    }
-	    Wire.endTransmission();
-	}
 }
 
 void loop() {
@@ -98,16 +86,19 @@ void loop() {
 	Wire.write(0x07);
 	Wire.endTransmission();
 
-	for(int x=0;x<2;x++){
+	for(int x=0;x<1024;x++){
 		Wire.beginTransmission(OLED_I2C_ADDRESS);
 		Wire.write(OLED_CONTROL_BYTE_DATA_STREAM);
 	    for (uint8_t i=0; i<16; i++) {
 			// Wire.write(0b11000001);	
-			Wire.write(0xAA);	
+			// Wire.write(0x81);	
 			// Wire.write(0x02);
+			Wire.write(pattern1[i]);
+			// Wire.write(pattern2[i]);
 	    }
 	    Wire.endTransmission();
 	}
+
     delay(5000);
 	
 }

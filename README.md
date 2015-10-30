@@ -1,7 +1,5 @@
 # Interfacing the Arduino with an SSD1306 driven OLED Display
 
-_in-progress_
-
 Tutorial : [Part 1](http://robotcantalk.blogspot.com/2015/03/interfacing-arduino-with-ssd1306-driven.html), [Part 2](http://robotcantalk.blogspot.com/2015/03/interfacing-arduino-with-ssd1306-driven_9.html)
 
 ## oled_test
